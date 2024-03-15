@@ -38,8 +38,9 @@ body {
 }
 
 .container {
-  width: 520px;
-  height: 370px;
+  height: 400px;
+  max-width: 550px;
+  width: 500px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -87,11 +88,9 @@ body {
   letter-spacing: 1px;
 }
 .description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.76rem;
+  width: 90%;
+  text-align: center;
+  font-size: 1rem;
   font-weight: var(--fw-light);
   color: var(--Light-lavender);
   font-weight: var(--fw-medium);
@@ -119,6 +118,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  padding: 25px 0;
 }
 .summary__item2 {
   background-color: #fff6eb;
@@ -161,7 +161,10 @@ body {
   color: var(--Dark-gray-blue);
   opacity: 1.4;
 }
-button {
+.btn {
+  text-align: center;
+  display: flex;
+  justify-content: center;
   border-radius: 25px;
   border: 1px solid var(--Dark-gray-blue);
   background-color: var(--Dark-gray-blue);
@@ -176,13 +179,72 @@ button {
 button:hover {
   background: linear-gradient(var(--Light-slate-blue), var(--Light-royal-blue));
 }
-.attribution {
-  width: 300px;
-  margin: 0 auto;
-  font-size: 0.8rem;
-  padding: 15px 0;
-}
-.attribution a {
-  text-decoration: none;
-  color: var(--Green-teal);
+@media (max-width: 512px) {
+  .container {
+    width: 100%;
+    max-width: 512px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: none;
+  }
+  .result {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 0 0 25px 25px;
+  }
+  .result__heading {
+    font-size: 1.5rem;
+    padding: 10px 0;
+  }
+  .result__score {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    width: 180px;
+    height: 180px;
+  }
+  .result__score span {
+    font-size: 4rem;
+  }
+  .result__info {
+    padding: 10px 0;
+    font-size: 1.5rem;
+  }
+  .description {
+    width: 300px;
+    text-align: center;
+    font-size: 1rem;
+    min-width: 250px;
+    color: var(--White);
+    margin-bottom: 30px;
+    opacity: 0.6;
+  }
+  .summary {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .summary__heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .summary__item {
+    padding: 25px 0;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+  .title {
+    margin-left: -200px;
+    font-size: 1.4rem;
+  }
+  .summary__item p {
+    font-size: 1rem;
+    margin-right: 20px;
+  }
+  .btn {
+    font-size: 1.4rem;
+    border-radius: 40px;
+  }
 }
